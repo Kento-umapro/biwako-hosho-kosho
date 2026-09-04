@@ -1,0 +1,451 @@
+<title>びわこ補償交渉戦略</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&display=swap">
+<style>
+:root{
+  --paper:#FAF8F3;
+  --ink:#33312C;
+  --ink-l:#6E6A60;
+  --indigo:#3A4A63;
+  --indigo-d:#2C3A50;
+  --shu:#B8544B;
+  --shu-bg:#F9F0EE;
+  --gold:#8C6D2F;
+  --gold-bg:#F6F1E4;
+  --line:#E3DED2;
+  --card:#FFFFFF;
+  --green:#4A7A5A;
+  --green-bg:#EDF3EE;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1C1B18;
+    --ink:#E8E4DB;
+    --ink-l:#A29C8F;
+    --indigo:#8FA5C6;
+    --indigo-d:#B7C6DE;
+    --shu:#D98078;
+    --shu-bg:#332322;
+    --gold:#C9A961;
+    --gold-bg:#2E2921;
+    --line:#3A3831;
+    --card:#26241F;
+    --green:#8AB99A;
+    --green-bg:#223026;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1C1B18;
+  --ink:#E8E4DB;
+  --ink-l:#A29C8F;
+  --indigo:#8FA5C6;
+  --indigo-d:#B7C6DE;
+  --shu:#D98078;
+  --shu-bg:#332322;
+  --gold:#C9A961;
+  --gold-bg:#2E2921;
+  --line:#3A3831;
+  --card:#26241F;
+  --green:#8AB99A;
+  --green-bg:#223026;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;
+  font-size:15.5px;line-height:2;letter-spacing:.02em;
+  padding:0 20px 80px;
+}
+.wrap{max-width:860px;margin-inline:auto}
+h1,h2,h3{font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;font-weight:800;text-wrap:balance;line-height:1.6}
+h2{font-size:1.45em;color:var(--indigo-d);margin:0 0 20px;display:flex;align-items:baseline;gap:14px}
+h2 .no{
+  font-size:.72em;color:var(--paper);background:var(--indigo);
+  border-radius:6px;padding:2px 12px;letter-spacing:.08em;white-space:nowrap
+}
+h3{font-size:1.08em;color:var(--indigo-d);margin:26px 0 10px}
+p{margin-bottom:14px}
+section{margin-top:64px}
+small{color:var(--ink-l)}
+b,strong{font-weight:700}
+.em{color:var(--shu);font-weight:700}
+.money{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--gold);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ヘッダー */
+header{padding:64px 0 40px;border-bottom:2px solid var(--indigo)}
+.doc-tag{
+  display:inline-block;font-size:.74em;letter-spacing:.18em;color:var(--paper);
+  background:var(--shu);border-radius:4px;padding:3px 14px;margin-bottom:18px;font-weight:700
+}
+h1{font-size:clamp(26px,4.5vw,36px);color:var(--indigo-d);margin-bottom:14px}
+.lead{color:var(--ink-l);font-size:.95em}
+.meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;font-size:.8em;color:var(--ink-l)}
+.meta b{color:var(--ink)}
+
+/* サマリーカード */
+.summary{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px
+}
+.sum-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px 26px}
+.sum-card .t{font-size:.78em;letter-spacing:.12em;color:var(--ink-l);margin-bottom:8px;font-weight:700}
+.sum-card .v{font-family:"Noto Serif JP",serif;font-size:1.9em;font-weight:600;line-height:1.3}
+.sum-card:first-child .v{color:var(--ink-l)}
+.sum-card:last-child{border-color:var(--shu);background:var(--shu-bg)}
+.sum-card:last-child .v{color:var(--shu)}
+.sum-card .s{font-size:.78em;color:var(--ink-l);margin-top:6px}
+
+/* コールアウト */
+.callout{
+  border-left:5px solid var(--shu);background:var(--shu-bg);
+  border-radius:0 10px 10px 0;padding:22px 26px;margin:22px 0
+}
+.callout.ok{border-color:var(--green);background:var(--green-bg)}
+.callout.gold{border-color:var(--gold);background:var(--gold-bg)}
+.callout .ct{font-weight:800;font-family:"M PLUS Rounded 1c",sans-serif;margin-bottom:8px;color:var(--ink)}
+.callout p:last-child{margin-bottom:0}
+
+/* 表 */
+.tblwrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{width:100%;min-width:680px;border-collapse:collapse;font-size:.85em;line-height:1.8}
+th,td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{
+  background:var(--indigo);color:var(--paper);font-weight:700;font-size:.95em;
+  letter-spacing:.04em;white-space:nowrap
+}
+tbody tr:last-child td{border-bottom:0}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.tag{
+  display:inline-block;font-size:.82em;border-radius:4px;padding:1px 10px;
+  font-weight:700;white-space:nowrap
+}
+.tag.core{background:var(--green-bg);color:var(--green)}
+.tag.fight{background:var(--gold-bg);color:var(--gold)}
+.tag.hard{background:var(--shu-bg);color:var(--shu)}
+
+/* リスト */
+ul.pts{list-style:none;margin:12px 0 18px}
+ul.pts li{position:relative;padding-left:26px;margin-bottom:10px}
+ul.pts li::before{
+  content:"";position:absolute;left:4px;top:13px;width:10px;height:10px;
+  border-radius:2px;background:var(--indigo);opacity:.75
+}
+ul.pts li.x::before{background:var(--shu)}
+ol.steps{margin:12px 0 18px 4px;counter-reset:st;list-style:none}
+ol.steps li{
+  position:relative;padding:0 0 18px 46px;counter-increment:st
+}
+ol.steps li::before{
+  content:counter(st);position:absolute;left:0;top:2px;width:30px;height:30px;
+  border-radius:50%;background:var(--indigo);color:var(--paper);
+  display:flex;align-items:center;justify-content:center;
+  font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:.85em
+}
+ol.steps li:not(:last-child)::after{
+  content:"";position:absolute;left:14px;top:36px;bottom:0;width:2px;background:var(--line)
+}
+ol.steps b{color:var(--indigo-d)}
+
+/* シナリオ */
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.scen-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column}
+.scen-card.hot{border:2px solid var(--shu)}
+.scen-card .h{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1em;color:var(--indigo-d);margin-bottom:4px}
+.scen-card .r{font-family:"Noto Serif JP",serif;font-size:1.5em;font-weight:600;color:var(--gold);margin:8px 0 12px}
+.scen-card.hot .r{color:var(--shu)}
+.scen-card p{font-size:.82em;color:var(--ink-l);margin-bottom:0;line-height:1.9}
+.scen-card .badge{font-size:.72em;font-weight:700;letter-spacing:.08em;color:var(--ink-l)}
+.scen-card.hot .badge{color:var(--shu)}
+
+/* 注記・出典 */
+.note{font-size:.8em;color:var(--ink-l);line-height:1.9;margin-top:10px}
+.src{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);font-size:.78em;color:var(--ink-l);line-height:2.1}
+.src a{color:var(--indigo);text-decoration:underline;text-underline-offset:3px;word-break:break-all}
+
+@media(max-width:700px){
+  .summary,.scen{grid-template-columns:1fr}
+  body{font-size:15px}
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="doc-tag">社外秘・交渉戦略メモ</span>
+  <h1>交差点南進事業に伴う補償交渉<br>8,000万円提示への対応方針</h1>
+  <p class="lead">
+    びわこメモリアルホール北東角交差点の県道南進（石部大橋方面への接続）に伴い、<br>
+    土木事務所から提示された補償額を検討し、目標額へ近づけるための材料と進め方を整理した。
+  </p>
+  <div class="meta">
+    <span>作成日：<b>2026年9月4日</b></span>
+    <span>対象：<b>家族葬会館 びわこメモリアルホール（栗東市林295-2）</b></span>
+    <span>想定事業者：<b>滋賀県 南部土木事務所（国道1号交差点のため国関与の可能性）</b></span>
+  </div>
+  <div class="summary">
+    <div class="sum-card">
+      <div class="t">現在の提示額</div>
+      <div class="v">8,000万円</div>
+      <div class="s">「営業の保証」名目として提示（内訳未確認）</div>
+    </div>
+    <div class="sum-card">
+      <div class="t">目標額</div>
+      <div class="v">2億5,000万円</div>
+      <div class="s">提示額の約3.1倍 — 到達には枠組み自体の変更が必要</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2><span class="no">結論</span>先に一番大事なことを</h2>
+  <p>
+    公共事業の補償は「損失補償基準」に基づく<b>項目の積み上げ計算</b>で決まり、<br>
+    交渉で気持ちや希望額を伝えても、1円も動かない世界です。<br>
+    金額を動かす方法はただひとつ、<b>「補償項目を増やし、各項目の認定を最大化する」</b>ことです。
+  </p>
+  <div class="callout">
+    <div class="ct">8,000万円→2億5,000万円は「営業補償の上乗せ」では届かない</div>
+    <p>
+      営業補償には法制度上の天井があります（後述：収益の最大2〜3年分）。<br>
+      仮に年間の営業利益が3,000万円なら、営業補償だけでは最大でも1億円弱です。<br>
+      2.5億円に届く現実的な経路は、<span class="em">「一部用地の取得＋営業補償」という現在の枠組みを、
+      「会館機能の回復が困難＝大規模改造または全面買収・移転再築」という枠組みへ引き上げさせること</span>です。<br>
+      土地・建物・工作物・移転料・営業補償・残地をフルパッケージで積んだときに、初めて視野に入る金額です。
+    </p>
+  </div>
+  <p>
+    以下、①制度の仕組み、②積み上げ候補、③葬儀会館ならではの主張材料、<br>
+    ④金額シナリオ、⑤進め方とリスク、の順に整理します。
+  </p>
+</section>
+
+<section>
+  <h2><span class="no">1</span>補償制度の仕組み（相手が使うルールブック）</h2>
+  <p>
+    国・県の用地補償は「公共用地の取得に伴う損失補償基準」（用地対策連絡会決定）と各運用方針に従って算定されます。<br>
+    担当者の裁量で金額を乗せることは制度上できないため、<b>こちらも同じルールブックの上で戦う</b>のが基本です。
+  </p>
+  <h3>営業補償は3類型あり、どれに乗るかで桁が変わる</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>類型</th><th>どんな時に</th><th>補償されるもの</th><th>水準感</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>営業休止補償</b></td>
+        <td>工事等で一時的に休業する場合</td>
+        <td>休業期間中の収益減＋固定経費＋従業員の休業手当＋得意先喪失補償</td>
+        <td class="num">通常は数か月分<br><small>（休業期間＝移転・工事期間で認定）</small></td>
+      </tr>
+      <tr>
+        <td><b>営業規模縮小補償</b></td>
+        <td>敷地の一部を失い営業規模が縮む場合</td>
+        <td>縮小に伴う固定経費増・収益減、資産の売却損、解雇者への補償等</td>
+        <td class="num">縮小割合に応じて算定</td>
+      </tr>
+      <tr>
+        <td><b>営業廃止補償</b></td>
+        <td>その場所で営業の継続が不能となる場合</td>
+        <td>営業権等の取引価格＋資産売却損＋従業員関係＋<b>従前収益の2年分（転業が特に困難なら3年分）</b></td>
+        <td class="num">収益2〜3年分が上限<br><small>（国交省基準47条・運用方針）</small></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <p class="note">
+    ※ 8,000万円の提示が「どの類型で・何を・何か月分」積んだものか、算定内訳の開示を求めることが第一歩。<br>
+    　内訳が分からなければ、増額の議論は始まりません。
+  </p>
+  <h3>営業補償以外に積める項目（ここが本丸）</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>項目</th><th>根拠</th><th>内容</th><th>難易度</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>土地の対価</b></td>
+        <td>基準8条ほか</td>
+        <td>取得される土地の正常な取引価格。国道1号×県道の角地・事業用地としての価値を独自鑑定で主張</td>
+        <td><span class="tag core">確実に取る</span></td>
+      </tr>
+      <tr>
+        <td><b>残地補償</b></td>
+        <td>収用法74条</td>
+        <td>残った敷地の価値減少。形状悪化・利用効率低下に加え、<b>騒音・振動・排気ガス増による価値減</b>も主張対象</td>
+        <td><span class="tag fight">争点化する</span></td>
+      </tr>
+      <tr>
+        <td><b>残地工事費</b></td>
+        <td>収用法75条</td>
+        <td>防音壁・目隠し植栽・門扉・出入口の付け替え・駐車場の再整備など、残地を使い続けるための工事費</td>
+        <td><span class="tag core">確実に取る</span></td>
+      </tr>
+      <tr>
+        <td><b>移転料（構内改造・再築）</b></td>
+        <td>収用法77条</td>
+        <td>建物・工作物が支障になる場合の改造費・再築費。<b>ここが認められると金額の桁が変わる</b></td>
+        <td><span class="tag hard">枠組みを変える</span></td>
+      </tr>
+      <tr>
+        <td><b>営業補償（上表）</b></td>
+        <td>収用法88条ほか</td>
+        <td>休止・縮小・廃止のいずれかで算定</td>
+        <td><span class="tag fight">争点化する</span></td>
+      </tr>
+      <tr>
+        <td><b>事業損失（工事中）</b></td>
+        <td>事業損失事務処理要領等</td>
+        <td>工事中の騒音・振動等で受忍限度を超える損害。事前・事後の調査実施を工事条件として確約させる</td>
+        <td><span class="tag fight">争点化する</span></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <div class="callout gold">
+    <div class="ct">注意：供用後の「交通量が増えること」自体は、金銭補償の対象にならないのが原則</div>
+    <p>
+      道路開通後の騒音・交通量増は「事業の効果」であり、損失補償の枠外とされるのが実務です。<br>
+      だからこそ、供用後の影響は<b>金銭ではなく「現物」で取る</b>のが定石です。<br>
+      防音壁の設置、出入口の位置・形状、右折レーンや中央分離帯の開口部、植栽帯、信号の設置——<br>
+      これらを<b>設計協議の条件として文書で確約</b>させ、
+      金銭面は「残地の価値減少」として鑑定評価に織り込ませる二段構えにします。
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="no">2</span>葬儀会館ならではの主張材料（肉付けの中身）</h2>
+  <p>
+    一般の店舗と違い、葬儀会館は<b>「静けさ」そのものが商品</b>です。<br>
+    ここを理論と証拠で固めることが、残地価値減・営業補償・移転料のすべてに効いてきます。
+  </p>
+  <ul class="pts">
+    <li><b>静謐性は営業の生命線。</b>自社サイトでも「選ばれる理由」に「上品さ」「心が落ち着く」式場を掲げており、
+    騒音・振動はサービスの根幹を毀損する——広告物・顧客の声として既に文書化されている点が強い。</li>
+    <li><b>やり直しのきかない儀式。</b>読経・弔辞・お別れの瞬間に重機音や交通騒音が入れば、
+    その葬儀は二度と取り返せない。クレームは信用毀損に直結し、紹介・会員ビジネスの毀損額として主張できる。</li>
+    <li><b>夜間も営業している施設。</b>通夜・ご安置・ご遺族の宿泊があり、夜間工事・夜間交通の影響を受ける時間帯が
+    一般店舗より圧倒的に長い（実質24時間営業）。</li>
+    <li><b>出棺動線への支障。</b>霊柩車・マイクロバスの出入りが交差点改良でどう変わるか。
+    右折進入・右折退出が規制されれば、遠方の親族・高齢の参列者の利便が下がり、選ばれにくくなる。</li>
+    <li><b>駐車場の減少＝施行可能な葬儀規模の縮小。</b>駐車台数が減れば受注できる葬儀の規模が構造的に縮む。
+    「1台あたりの売上寄与」を算出し、営業規模縮小補償の実額根拠にする。</li>
+    <li><b>会員（事前登録者）は将来売上の資産。</b>会員名簿と成約率から将来収益を数値化し、
+    得意先喪失補償・営業補償の認定額を引き上げる材料にする。</li>
+    <li><b>参列者の多くが高齢者。</b>交通量増による敷地出入りの危険は、安全対策（信号・横断施設）要求の根拠になる。</li>
+  </ul>
+  <h3>いま直ちに始める「証拠づくり」</h3>
+  <ul class="pts">
+    <li>直近3期分の決算書・葬儀1件あたり単価・月別施行件数・宿泊利用実績の整理</li>
+    <li>現況の騒音・振動の測定（<b>工事前のベースライン</b>。事業者任せにせず自前でも測る）</li>
+    <li>式場・安置室・宿泊室と道路の位置関係図、駐車場の現況台数と満車実績</li>
+    <li>「静かだから選んだ」という顧客アンケート・口コミの収集（今からでも取る）</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="no">3</span>金額シナリオ（どの枠組みで戦うか）</h2>
+  <p>
+    金額はご要望の水準から逆算した「枠組み別の到達可能性」です。<br>
+    実際の数字は決算・鑑定・図面がないと積めないため、<b>数値はすべて仮置き</b>として見てください。
+  </p>
+  <div class="scen">
+    <div class="scen-card">
+      <div class="badge">シナリオA</div>
+      <div class="h">現在の枠組みのまま項目を積み増す</div>
+      <div class="r">〜1.2億円</div>
+      <p>土地対価の鑑定見直し＋残地価値減＋残地工事費（防音壁・駐車場再整備）＋営業休止・縮小補償の認定期間延長＋得意先喪失。
+      現実的だが2.5億には構造的に届かない。</p>
+    </div>
+    <div class="scen-card">
+      <div class="badge">シナリオB</div>
+      <div class="h">「機能回復には大規模改造が必要」と認めさせる</div>
+      <div class="r">1.5〜2億円</div>
+      <p>式場・安置室の防音改修、玄関・動線の付け替え、駐車場の立体化や代替地取得など、
+      構内改造の移転料として積む。改造中の長期休業補償も乗る。</p>
+    </div>
+    <div class="scen-card hot">
+      <div class="badge">シナリオC（本命）</div>
+      <div class="h">「この場所では機能回復不能」＝全面買収・移転再築</div>
+      <div class="r">2.5億円圏</div>
+      <p>土地全体の対価＋建物再築費＋工作物・動産移転＋営業休止（長期）＋その他一式。
+      静謐性を要する施設が幹線交差点の角では成立しない、という主張を軸に、
+      残地収用の請求（収用法76条）も視野に入れる。</p>
+    </div>
+  </div>
+  <div class="callout ok">
+    <div class="ct">交渉のポジショニング</div>
+    <p>
+      「金額を上げてくれ」ではなく、<b>「この事業はうちの営業を根本から壊す。
+      成立させたいなら、機能回復までの全部を見てほしい」</b>という立て付けにします。<br>
+      シナリオCを正面に立てて交渉し、事業者側がそれを避けたければ
+      B相当（大規模改造＋手厚い営業補償）で折り合う——という構図が、2億前後を現実にする王道です。
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="no">4</span>進め方（段取りがすべて）</h2>
+  <ol class="steps">
+    <li><b>算定内訳の開示請求。</b>8,000万円の補償金算定調書（項目・単価・数量・認定期間）を出させる。
+    口頭説明で済ませない。あわせて事業計画図・用地実測図・完成後の交差点計画図をもらう。</li>
+    <li><b>専門家チームの組成。</b>補償コンサルタント（または用地補償に強い不動産鑑定士）＋
+    収用案件の経験がある弁護士。着手金を抑えた増額成功報酬型の事務所もある。
+    <b>ここは必ず入れる——素人交渉と専門家交渉で結果が桁で変わる領域です。</b></li>
+    <li><b>証拠固め（前章）と独自鑑定。</b>土地の私的鑑定評価と、営業への影響の定量化を先に済ませ、
+    「こちらの積算書」を作る。相手の算定書と項目単位でぶつける。</li>
+    <li><b>設計協議で現物要求。</b>防音壁・出入口・右折動線・信号・植栽・工事時間帯制限（葬儀施行中の作業停止）・
+    事前事後の家屋調査と騒音測定を、文書（覚書）で確約させる。</li>
+    <li><b>枠組み交渉。</b>シナリオCの主張書面を提出し、B以上での再算定を求める。
+    県だけで決められない場合は国（滋賀国道事務所）との協議に乗せさせる。</li>
+    <li><b>合意 or 収用手続の見極め。</b>納得できる水準なら任意契約。
+    決裂すれば事業認定→収用委員会の裁決となるが、裁決は基準どおりの算定に寄りやすい。
+    その先は補償金の増額請求訴訟（年単位）になることも織り込んで判断する。</li>
+  </ol>
+  <h3>やってはいけないこと（減額・関係悪化のリスク）</h3>
+  <ul class="pts">
+    <li class="x"><b>根拠のない金額を先に口にする。</b>「2.5億欲しい」ではなく「この項目が抜けている」で攻める。
+    金額先行は「ごね得狙い」と記録され、以後の協議で不利に働く。</li>
+    <li class="x"><b>感情的な反対運動化。</b>事業自体への反対と補償交渉を混ぜると、
+    事業認定→収用ルートへ進むだけで、収用裁決では現提示額を下回る項目すら出かねない。</li>
+    <li class="x"><b>内訳を見ずにハンコを押す・口頭で「概ね了解」と言う。</b>一度応諾の姿勢を見せると再算定は困難。</li>
+    <li class="x"><b>工事開始後の後出し。</b>ベースライン（現況測定・現況写真）は着工前しか取れない。</li>
+  </ul>
+  <h3>あわせて押さえる論点</h3>
+  <ul class="pts">
+    <li><b>税務。</b>収用等の場合、5,000万円特別控除や代替資産の課税繰延特例がある。
+    「額面」だけでなく「手取り」の最大化を税理士と設計する（補償項目の名目で課税が変わる）。</li>
+    <li><b>事業側の時間的弱み。</b>用地取得の遅れは事業者が最も避けたいこと。
+    誠実に、しかし急がず、期限は常にこちらが握る。</li>
+    <li><b>過去事例の収集。</b>葬儀場そのものの公表裁決例は少ないが、
+    静謐性を要する施設（病院・宿泊施設等）の残地補償・防音対策事例は補償コンサルの実務データにある。
+    専門家選定の面談で「類似案件の経験」を必ず確認する。</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="no">5</span>次のアクション（今週〜今月）</h2>
+  <ul class="pts">
+    <li>土木事務所へ「算定内訳と事業計画図面の開示」を文書で依頼（メール可・記録を残す）</li>
+    <li>直近3期の決算書と施行実績データの整理を先方（ご友人）に依頼</li>
+    <li>用地補償に強い弁護士・補償コンサルタントの候補を2〜3リストアップし、初回相談を設定</li>
+    <li>敷地内数か所で現況の騒音測定を実施（日中・夜間・通夜時間帯）</li>
+    <li>提示済み8,000万円に対しては「内訳を確認のうえ回答する」とだけ伝え、可否の言質を与えない</li>
+  </ul>
+  <div class="callout">
+    <div class="ct">この資料の位置づけ</div>
+    <p>
+      本資料は交渉の設計図であり、法的助言ではありません。<br>
+      金額の仮置きは決算・図面の入手後に必ず引き直すこと。<br>
+      実際の主張書面・交渉は、収用案件の経験がある弁護士・補償コンサルタントと組んで進めてください。
+    </p>
+  </div>
+</section>
+
+<div class="src">
+  <b>主な参照資料</b><br>
+  ・<a href="https://www.mlit.go.jp/common/001338606.pdf">公共用地の取得に伴う損失補償基準（用地対策連絡会決定・国土交通省掲載）</a><br>
+  ・<a href="https://www.mlit.go.jp/totikensangyo/content/001397834.pdf">同 損失補償基準細則</a><br>
+  ・<a href="https://www8.cao.go.jp/pfi/iinkai/kaisai/sougou/kentou/5kai/pdf/shiryo_sbk_523.pdf">公共用地の取得に伴う営業補償の考え方（国土交通省の例・内閣府資料）</a>——営業廃止補償は従前収益の2年（転業困難時3年）分の範囲内<br>
+  ・<a href="https://lawzilla.jp/law/326AC0100000219?n=ln74&mode=only">土地収用法74条（残地補償）</a>・75条（工事費用）・77条（移転料）・88条（通常受ける損失）<br>
+  ・<a href="https://www.shuyou.metro.tokyo.lg.jp/10gaiyou/compensation">東京都収用委員会「補償について」</a>／
+  <a href="https://www.pref.saitama.lg.jp/e2101/saiketusinseitounotebiki/sonnsituhosyounituite.html">埼玉県「損失補償について」</a><br>
+  ・<a href="https://www.pref.ishikawa.lg.jp/gijyutsu/documents/07_eigyo.pdf">石川県 営業調査積算要領（休止補償の算定式）</a><br>
+  ・<a href="https://tachinoki.a-lawoffice.jp/expc-road-project/">道路事業の立ち退き・補償の実務解説（弁護士事務所）</a>／
+  <a href="https://tachinoki.a-lawoffice.jp/expc-residual-land/">残地補償の解説</a><br>
+  ・<a href="https://www.kkr.mlit.go.jp/shiga/road/1gou.html">国土交通省 滋賀国道事務所（国道1号・栗東水口道路）</a>
+</div>
+
+</div>
