@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>資料ライブラリ｜西村健登</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#F7F6F2;
+  --ink:#33312C;
+  --ink-l:#6E6A60;
+  --navy:#3A4A63;
+  --navy-d:#2C3A50;
+  --card:#fff;
+  --line:#E3DFD5;
+  --accent:#B8544B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;
+  font-size:15.5px;line-height:1.9;padding:0 20px 80px;
+}
+.wrap{max-width:840px;margin-inline:auto}
+header{padding:56px 0 28px;border-bottom:2px solid var(--navy)}
+h1{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(24px,4.5vw,32px);color:var(--navy-d)}
+header p{color:var(--ink-l);font-size:.9em;margin-top:8px}
+h2{
+  font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1.15em;
+  color:var(--navy-d);margin:44px 0 14px;display:flex;align-items:center;gap:10px
+}
+h2::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--navy)}
+.item{
+  display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:20px 24px;margin-bottom:12px;text-decoration:none;color:inherit;
+  transition:transform .15s,box-shadow .2s
+}
+.item:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(58,74,99,.12)}
+.item .t{font-weight:700;color:var(--navy-d);font-size:1.02em}
+.item .t::after{content:"↗";margin-left:8px;font-size:.85em;color:var(--ink-l)}
+.item .d{font-size:.82em;color:var(--ink-l);margin-top:4px}
+.item .meta{display:flex;gap:14px;margin-top:8px;font-size:.74em;color:var(--ink-l)}
+.item .meta .lock{color:var(--accent);font-weight:700}
+.empty{color:var(--ink-l);font-size:.85em;padding:8px 4px}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-size:.76em;color:var(--ink-l)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>資料ライブラリ</h1>
+  <p>作成した参考資料・アーカイブの置き場。新しい資料ができたらここに追加していく。</p>
+</header>
+
+<!--
+  追加のしかた: 該当カテゴリの下に .item を1ブロックコピーして
+  タイトル・説明・日付・URLを書き換えるだけ。
+  非公開の資料（Artifact等・要Claudeログイン）には <span class="lock">要ログイン</span> を付ける。
+-->
+
+<h2>交渉・法務</h2>
+<a class="item" href="https://kento-umapro.github.io/biwako-hosho-kosho/">
+  <div class="t">びわこ補償交渉戦略</div>
+  <div class="d">交差点南進事業の補償提示8,000万円への対応方針。制度整理・積み上げ項目・金額シナリオ・準備資料チェックリスト。</div>
+  <div class="meta"><span>2026.09.04</span><span>びわこメモリアルホール</span></div>
+</a>
+
+<h2>企画・マーケティング</h2>
+<a class="item" href="https://kento-umapro.github.io/hansoku-awards/">
+  <div class="t">販促コンペ受賞企画書アーカイブ</div>
+  <div class="d">宣伝会議「販促コンペ」歴代受賞163作品の一覧。回次・賞・課題企業・キーワードで絞り込み。企画書作成時の参考元。</div>
+  <div class="meta"><span>2026.09.04</span><span>うまプロ共通</span></div>
+</a>
+
+<h2>ダッシュボード・日次データ</h2>
+<p class="empty">（必要になったらここに追加。どてっぱん売上予報・出数・検索順位など）</p>
+
+<footer>
+  西村健登の作業アーカイブ。掲載URLの共有範囲には注意すること。
+</footer>
+
+</div>
+</body>
+</html>
